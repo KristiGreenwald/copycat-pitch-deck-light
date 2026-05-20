@@ -153,7 +153,20 @@ html, body {
 }
 .monetization-note strong { color: var(--text); }
 
-/* ===== SLIDE 5: EDGE ===== */
+/* ===== MARKET SIZE BARS ===== */
+.market-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.market-cols h3 { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+.market-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.market-bar-container { flex: 1; height: 28px; background: var(--surface); border-radius: 100px; overflow: hidden; }
+.market-bar-fill { height: 100%; background: var(--orange); border-radius: 100px; min-width: 4px; }
+.market-bar-fill--mid { background: var(--orange-light); }
+.market-bar-fill--som { background: rgba(251,101,30,0.4); }
+.market-stat { min-width: 80px; text-align: right; }
+.market-val { font-size: 20px; font-weight: 800; }
+.market-key { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.market-note { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+
+/* ===== SLIDE 7: EDGE ===== */
 .insight-points { display: flex; flex-direction: column; gap: 32px; }
 .insight-item { padding-left: 24px; border-left: 3px solid var(--orange); }
 .insight-item strong { display: block; font-size: 20px; margin-bottom: 8px; }
@@ -215,6 +228,7 @@ html, body {
   .ask-uses { grid-template-columns: 1fr; }
   .compare-container { grid-template-columns: 1fr; }
   .compare-arrow { text-align: center; transform: rotate(90deg); }
+  .market-cols { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 768px) {
   .slide { padding: 32px 24px; }
