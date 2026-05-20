@@ -62,6 +62,9 @@ html, body {
 /* ===== SLIDE 1: TITLE ===== */
 .slide--title { text-align: center; }
 .slide--title .slide-content { display: flex; flex-direction: column; align-items: center; }
+.title-logo {
+  width: 120px; height: 120px; margin-bottom: 32px;
+}
 .title-company {
   font-size: clamp(64px, 10vw, 120px); font-weight: 900; letter-spacing: -4px; line-height: 1; margin-bottom: 24px;
 }
@@ -69,7 +72,7 @@ html, body {
   font-size: clamp(20px, 2.5vw, 28px); font-weight: 500; color: var(--text-secondary); margin-bottom: 16px;
 }
 .title-sub {
-  font-size: 18px; color: var(--text-muted); max-width: 600px; line-height: 1.6;
+  font-size: 18px; color: var(--text-muted); max-width: 800px; line-height: 1.6; white-space: nowrap;
 }
 
 /* ===== SLIDE 2: PROBLEM ===== */
