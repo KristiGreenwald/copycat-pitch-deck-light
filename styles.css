@@ -156,18 +156,55 @@ html, body {
 }
 .monetization-note strong { color: var(--text); }
 
-/* ===== MARKET SIZE BARS ===== */
-.market-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-.market-cols h3 { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
-.market-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
-.market-bar-container { flex: 1; height: 28px; background: var(--surface); border-radius: 100px; overflow: hidden; }
-.market-bar-fill { height: 100%; background: var(--orange); border-radius: 100px; min-width: 4px; }
-.market-bar-fill--mid { background: var(--orange-light); }
-.market-bar-fill--som { background: rgba(251,101,30,0.4); }
-.market-stat { min-width: 80px; text-align: right; }
-.market-val { font-size: 20px; font-weight: 800; }
-.market-key { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.market-note { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+/* ===== MARKET SIZE — CONCENTRIC CIRCLES ===== */
+.tam-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+}
+.tam-layout h3 {
+  font-size: 16px; font-weight: 700; margin-bottom: 24px; text-align: center;
+}
+.tam-circles {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  height: 260px;
+}
+.tam-ring {
+  position: absolute; border-radius: 50%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.tam-ring--tam {
+  width: 260px; height: 260px;
+  background: var(--orange); color: #fff;
+}
+.tam-ring--sam {
+  width: 160px; height: 160px;
+  background: var(--orange-light); color: #fff;
+}
+.tam-ring--som {
+  width: 80px; height: 80px;
+  background: #fff; color: var(--orange);
+  border: 2px solid var(--orange);
+}
+.tam-val {
+  font-size: 20px; font-weight: 900; line-height: 1;
+}
+.tam-ring--som .tam-val { font-size: 14px; }
+.tam-key {
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  opacity: 0.8; margin-top: 2px;
+}
+.tam-note {
+  font-size: 13px; color: var(--text-muted); text-align: center; margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .tam-layout { grid-template-columns: 1fr; gap: 40px; }
+  .tam-circles { height: 200px; }
+  .tam-ring--tam { width: 200px; height: 200px; }
+  .tam-ring--sam { width: 120px; height: 120px; }
+  .tam-ring--som { width: 60px; height: 60px; }
+  .tam-val { font-size: 16px; }
+  .tam-ring--som .tam-val { font-size: 12px; }
+}
 
 /* ===== SLIDE 7: EDGE ===== */
 .insight-points { display: flex; flex-direction: column; gap: 32px; }
@@ -231,7 +268,6 @@ html, body {
   .ask-uses { grid-template-columns: 1fr; }
   .compare-container { grid-template-columns: 1fr; }
   .compare-arrow { text-align: center; transform: rotate(90deg); }
-  .market-cols { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 768px) {
   .slide { padding: 32px 24px; }
