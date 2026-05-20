@@ -83,7 +83,41 @@ html, body {
 .problem-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
 .problem-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.5; }
 
-/* ===== SLIDE 3: SOLUTION ===== */
+/* ===== SLIDE 3: HOW IT WORKS ===== */
+.compare-container {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px; align-items: center;
+}
+.compare-col {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;
+}
+.compare-col--new {
+  border-color: var(--orange); box-shadow: 0 0 40px rgba(251,101,30,0.1);
+}
+.compare-col h3 {
+  font-size: 16px; font-weight: 700; margin-bottom: 16px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.compare-col--new h3 { border-color: rgba(251,101,30,0.2); }
+.compare-steps { list-style: none; padding: 0; margin-bottom: 20px; counter-reset: step; }
+.compare-steps li {
+  font-size: 14px; color: var(--text-secondary); padding: 6px 0 6px 24px; position: relative;
+}
+.compare-steps li::before {
+  content: counter(step); counter-increment: step;
+  position: absolute; left: 0; top: 7px;
+  width: 18px; height: 18px; border-radius: 50%; background: var(--border);
+  font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted);
+}
+.compare-col--new .compare-steps li::before { background: var(--orange); color: #fff; }
+.compare-col--new .compare-steps li { color: var(--text); font-weight: 600; }
+.compare-time { font-size: 28px; font-weight: 800; color: var(--text-muted); margin-bottom: 4px; }
+.compare-time--fast { color: var(--orange); }
+.compare-risk { font-size: 13px; color: var(--red); }
+.compare-safe { font-size: 13px; color: var(--green); }
+.compare-arrow { font-size: 36px; font-weight: 800; color: var(--orange); }
+
+/* ===== SLIDE 4: SOLUTION ===== */
 .advantage-list { display: flex; flex-direction: column; gap: 24px; }
 .advantage-item {
   display: flex; gap: 20px; align-items: flex-start;
@@ -179,6 +213,8 @@ html, body {
   .problem-grid { grid-template-columns: 1fr; }
   .trifecta { grid-template-columns: 1fr; }
   .ask-uses { grid-template-columns: 1fr; }
+  .compare-container { grid-template-columns: 1fr; }
+  .compare-arrow { text-align: center; transform: rotate(90deg); }
 }
 @media (max-width: 768px) {
   .slide { padding: 32px 24px; }
